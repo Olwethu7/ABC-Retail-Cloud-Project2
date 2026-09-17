@@ -1,0 +1,185 @@
+﻿@{
+    ViewData["Title"] = "Home - ABC Retail";
+}
+
+<div class="container-fluid px-0">
+    <!-- Hero Section -->
+    <div class="hero-section py-5 text-white">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-2 fw-bold mb-4">
+                        <i class="bi bi-cloud-arrow-up-fill me-3"></i>
+                        ABC Retail Cloud
+                    </h1>
+                    <p class="lead fs-3 mb-4 opacity-75">
+                        Enterprise-grade Azure Storage Solution
+                    </p>
+                    <p class="fs-5 mb-5 opacity-50">
+                        Manage customers, products, images, and orders with seamless cloud integration.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a asp-controller="Customer" asp-action="Index" class="btn btn-light btn-lg rounded-pill px-5 shadow-sm">
+                            <i class="bi bi-people"></i> Customers
+                        </a>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                            <i class="bi bi-box-seam"></i> Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4 feature-card">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-people fs-1 text-primary"></i>
+                    </div>
+                    <h5 class="fw-bold">Customers</h5>
+                    <p class="text-muted small">Manage customer profiles in Azure Table Storage</p>
+                    <a asp-controller="Customer" asp-action="Index" class="btn btn-sm btn-outline-primary rounded-pill mt-2">
+                        View <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4 feature-card">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-box-seam fs-1 text-success"></i>
+                    </div>
+                    <h5 class="fw-bold">Products</h5>
+                    <p class="text-muted small">Manage product inventory in Azure Table Storage</p>
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-sm btn-outline-success rounded-pill mt-2">
+                        View <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4 feature-card">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-images fs-1 text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold">Images</h5>
+                    <p class="text-muted small">Host product images in Azure Blob Storage</p>
+                    <a asp-controller="Blob" asp-action="Index" class="btn btn-sm btn-outline-warning rounded-pill mt-2">
+                        View <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4 feature-card">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-cart-plus fs-1 text-info"></i>
+                    </div>
+                    <h5 class="fw-bold">Orders</h5>
+                    <p class="text-muted small">Process orders via Azure Queue Storage</p>
+                    <a asp-controller="Order" asp-action="Create" class="btn btn-sm btn-outline-info rounded-pill mt-2">
+                        Place <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4 feature-card">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-lightning-charge fs-1" style="color:#f7971e;"></i>
+                    </div>
+                    <h5 class="fw-bold">Transactions</h5>
+                    <p class="text-muted small">Record a transaction via four Azure Functions</p>
+                    <a asp-controller="Transaction" asp-action="Create" class="btn btn-sm rounded-pill mt-2" style="color:#f7971e; border:1px solid #f7971e;">
+                        Run <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container py-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-light">
+            <div class="card-body p-4 text-center">
+                <h5 class="fw-bold text-muted mb-3">Azure Services Used</h5>
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-primary rounded-pill p-2">Table</span>
+                        <span class="text-muted">Storage</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-success rounded-pill p-2">Blob</span>
+                        <span class="text-muted">Storage</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-warning rounded-pill p-2">Queue</span>
+                        <span class="text-muted">Storage</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-info rounded-pill p-2">File</span>
+                        <span class="text-muted">Storage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+            .hero-section h1 {
+                color: #ffffff;
+            }
+
+            .hero-section .lead {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+            }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .btn-outline-primary:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+    </style>
+}
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+}

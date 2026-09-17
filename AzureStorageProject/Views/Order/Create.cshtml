@@ -1,0 +1,101 @@
+﻿@model AzureStorageProject.Models.OrderMessage
+
+@{
+    ViewData["Title"] = "Place Order - ABC Retail";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-gradient-success text-white rounded-top-4 p-4">
+                    <h3 class="mb-0 fw-bold">🛒 Place New Order</h3>
+                    <p class="mb-0 opacity-75">Submit an order for processing</p>
+                </div>
+                <div class="card-body p-4">
+                    <div class="alert alert-info rounded-3 mb-4">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        Orders will be added to the Azure Queue for processing.
+                    </div>
+
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3" role="alert"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="CustomerName" class="form-label fw-semibold">Customer Name</label>
+                            <input asp-for="CustomerName" class="form-control form-control-lg rounded-3" placeholder="Enter customer name" />
+                            <span asp-validation-for="CustomerName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProductId" class="form-label fw-semibold">Product ID</label>
+                            <input asp-for="ProductId" class="form-control form-control-lg rounded-3" placeholder="Enter Product Code (e.g., PROD-XXXX)" />
+                            <span asp-validation-for="ProductId" class="text-danger small"></span>
+                            <small class="text-muted d-block mt-1">Enter the Product Code from the product catalog.</small>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Quantity" class="form-label fw-semibold">Quantity</label>
+                            <input asp-for="Quantity" class="form-control form-control-lg rounded-3" type="number" min="1" value="1" />
+                            <span asp-validation-for="Quantity" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                                <i class="bi bi-arrow-left"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-success btn-lg rounded-pill px-5">
+                                <i class="bi bi-check-circle"></i> Place Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+            color: #ffffff;
+        }
+
+            .btn-success:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(56, 239, 125, 0.4);
+                color: #ffffff;
+            }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #11998e;
+                box-shadow: 0 0 0 0.2rem rgba(17, 153, 142, 0.25);
+            }
+
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+    </style>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+}

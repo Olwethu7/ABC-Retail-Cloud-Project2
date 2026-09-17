@@ -1,0 +1,21 @@
+﻿# Visual Studio
+.vs/
+bin/
+obj/
+publish_output/
+
+# Build artifacts
+function_app/
+function_app.zip
+*.tmp
+
+# User files
+*.user
+*.suo
+
+# Secrets (never push these)
+appsettings.Development.json
+local.settings.json
+
+# Logs
+*.log
