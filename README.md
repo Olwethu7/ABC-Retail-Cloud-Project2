@@ -1,7 +1,7 @@
-# ABC Retail Cloud — Project 2 (PROG121)
+# ABC Retail Cloud — Project 2
 
 Student Number: ST10344453
-Module Code: PROG121
+
 
 This solution contains two projects:
 
@@ -36,7 +36,7 @@ This solution contains two projects:
 ## Publishing to Azure
 
 See the step-by-step guide provided with this submission
-(`ST10344453_PROG121_Project2.docx`, Appendix A) for the exact Azure Portal
+(`ST10344453__Project2.docx`, Appendix A) for the exact Azure Portal
 and Visual Studio publish steps for both the Function App and the App Service.
 
 ## Security note
